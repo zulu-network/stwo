@@ -51,7 +51,7 @@ impl<'a, I: Iterator> PeekableExt<'a, I> for Peekable<I> {
     }
 }
 
-pub(crate) fn bit_reverse_index(i: usize, log_size: u32) -> usize {
+pub fn bit_reverse_index(i: usize, log_size: u32) -> usize {
     if log_size == 0 {
         return i;
     }
