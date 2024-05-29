@@ -2,18 +2,18 @@ use std::ops::Div;
 
 use num_traits::One;
 
-use crate::core::air::accumulation::{DomainEvaluationAccumulator, PointEvaluationAccumulator};
-use crate::core::air::mask::shifted_mask_points;
-use crate::core::air::{Component, ComponentProver, ComponentTrace};
-use crate::core::backend::CpuBackend;
-use crate::core::circle::{CirclePoint, Coset};
-use crate::core::constraints::{coset_vanishing, pair_vanishing};
-use crate::core::fields::m31::BaseField;
-use crate::core::fields::qm31::SecureField;
-use crate::core::fields::{ExtensionOf, FieldExpOps};
-use crate::core::poly::circle::CanonicCoset;
-use crate::core::utils::bit_reverse_index;
-use crate::core::ColumnVec;
+use crate::stwo_core::air::accumulation::{DomainEvaluationAccumulator, PointEvaluationAccumulator};
+use crate::stwo_core::air::mask::shifted_mask_points;
+use crate::stwo_core::air::{Component, ComponentProver, ComponentTrace};
+use crate::stwo_core::backend::CpuBackend;
+use crate::stwo_core::circle::{CirclePoint, Coset};
+use crate::stwo_core::constraints::{coset_vanishing, pair_vanishing};
+use crate::stwo_core::fields::m31::BaseField;
+use crate::stwo_core::fields::qm31::SecureField;
+use crate::stwo_core::fields::{ExtensionOf, FieldExpOps};
+use crate::stwo_core::poly::circle::CanonicCoset;
+use crate::stwo_core::utils::bit_reverse_index;
+use crate::stwo_core::ColumnVec;
 
 pub struct FibonacciComponent {
     pub log_size: u32,

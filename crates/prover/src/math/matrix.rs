@@ -1,5 +1,5 @@
-use crate::core::fields::m31::BaseField;
-use crate::core::fields::ExtensionOf;
+use crate::stwo_core::fields::m31::BaseField;
+use crate::stwo_core::fields::ExtensionOf;
 
 pub trait SquareMatrix<F: ExtensionOf<BaseField>, const N: usize> {
     fn get_at(&self, i: usize, j: usize) -> F;
@@ -42,7 +42,7 @@ impl<F: ExtensionOf<BaseField>, const N: usize> SquareMatrix<F, N> for RowMajorM
 
 #[cfg(test)]
 mod tests {
-    use crate::core::fields::m31::M31;
+    use crate::stwo_core::fields::m31::M31;
     use crate::m31;
     use crate::math::matrix::{RowMajorMatrix, SquareMatrix};
 

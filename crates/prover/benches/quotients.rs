@@ -2,14 +2,14 @@
 
 use criterion::{black_box, criterion_group, criterion_main, Criterion};
 use itertools::Itertools;
-use stwo_prover::core::backend::cpu::CpuBackend;
-use stwo_prover::core::backend::simd::SimdBackend;
-use stwo_prover::core::circle::SECURE_FIELD_CIRCLE_GEN;
-use stwo_prover::core::fields::m31::BaseField;
-use stwo_prover::core::fields::qm31::SecureField;
-use stwo_prover::core::pcs::quotients::{ColumnSampleBatch, QuotientOps};
-use stwo_prover::core::poly::circle::{CanonicCoset, CircleEvaluation};
-use stwo_prover::core::poly::BitReversedOrder;
+use stwo_prover::stwo_core::backend::cpu::CpuBackend;
+use stwo_prover::stwo_core::backend::simd::SimdBackend;
+use stwo_prover::stwo_core::circle::SECURE_FIELD_CIRCLE_GEN;
+use stwo_prover::stwo_core::fields::m31::BaseField;
+use stwo_prover::stwo_core::fields::qm31::SecureField;
+use stwo_prover::stwo_core::pcs::quotients::{ColumnSampleBatch, QuotientOps};
+use stwo_prover::stwo_core::poly::circle::{CanonicCoset, CircleEvaluation};
+use stwo_prover::stwo_core::poly::BitReversedOrder;
 
 // TODO(andrew): Consider removing const generics and making all sizes the same.
 fn bench_quotients<B: QuotientOps, const LOG_N_ROWS: u32, const LOG_N_COLS: u32>(

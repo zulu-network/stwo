@@ -3,19 +3,19 @@ use num_traits::{One, Zero};
 use tracing::{span, Level};
 
 use super::component::{WideFibAir, WideFibComponent};
-use crate::core::air::accumulation::DomainEvaluationAccumulator;
-use crate::core::air::{AirProver, Component, ComponentProver, ComponentTrace};
-use crate::core::backend::simd::column::BaseFieldVec;
-use crate::core::backend::simd::m31::{PackedBaseField, LOG_N_LANES};
-use crate::core::backend::simd::qm31::PackedSecureField;
-use crate::core::backend::simd::SimdBackend;
-use crate::core::backend::{Col, Column, ColumnOps};
-use crate::core::constraints::coset_vanishing;
-use crate::core::fields::m31::BaseField;
-use crate::core::fields::{FieldExpOps, FieldOps};
-use crate::core::poly::circle::{CanonicCoset, CircleEvaluation};
-use crate::core::poly::BitReversedOrder;
-use crate::core::ColumnVec;
+use crate::stwo_core::air::accumulation::DomainEvaluationAccumulator;
+use crate::stwo_core::air::{AirProver, Component, ComponentProver, ComponentTrace};
+use crate::stwo_core::backend::simd::column::BaseFieldVec;
+use crate::stwo_core::backend::simd::m31::{PackedBaseField, LOG_N_LANES};
+use crate::stwo_core::backend::simd::qm31::PackedSecureField;
+use crate::stwo_core::backend::simd::SimdBackend;
+use crate::stwo_core::backend::{Col, Column, ColumnOps};
+use crate::stwo_core::constraints::coset_vanishing;
+use crate::stwo_core::fields::m31::BaseField;
+use crate::stwo_core::fields::{FieldExpOps, FieldOps};
+use crate::stwo_core::poly::circle::{CanonicCoset, CircleEvaluation};
+use crate::stwo_core::poly::BitReversedOrder;
+use crate::stwo_core::ColumnVec;
 use crate::examples::wide_fibonacci::component::N_COLUMNS;
 
 impl AirProver<SimdBackend> for WideFibAir {
@@ -111,13 +111,13 @@ mod tests {
     use tracing::{span, Level};
 
     use super::{gen_trace, WideFibAir};
-    use crate::core::backend::simd::SimdBackend;
-    use crate::core::channel::{Blake2sChannel, Channel};
-    use crate::core::fields::m31::BaseField;
-    use crate::core::fields::IntoSlice;
-    use crate::core::prover::{prove, verify};
-    use crate::core::vcs::blake2_hash::Blake2sHasher;
-    use crate::core::vcs::hasher::Hasher;
+    use crate::stwo_core::backend::simd::SimdBackend;
+    use crate::stwo_core::channel::{Blake2sChannel, Channel};
+    use crate::stwo_core::fields::m31::BaseField;
+    use crate::stwo_core::fields::IntoSlice;
+    use crate::stwo_core::prover::{prove, verify};
+    use crate::stwo_core::vcs::blake2_hash::Blake2sHasher;
+    use crate::stwo_core::vcs::hasher::Hasher;
     use crate::examples::wide_fibonacci::component::{WideFibComponent, LOG_N_COLUMNS};
 
     #[test_log::test]

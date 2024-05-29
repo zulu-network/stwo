@@ -2,9 +2,9 @@ use core::fmt;
 
 use num_traits::{One, Zero};
 
-use crate::core::fields::m31::BaseField;
-use crate::core::fields::FieldExpOps;
-use crate::core::vcs::hasher::{self, Hasher, Name};
+use crate::stwo_core::fields::m31::BaseField;
+use crate::stwo_core::fields::FieldExpOps;
+use crate::stwo_core::vcs::hasher::{self, Hasher, Name};
 use crate::math::matrix::{RowMajorMatrix, SquareMatrix};
 
 const POSEIDON_WIDTH: usize = 24; // in BaseField elements.
@@ -223,8 +223,8 @@ impl Hasher for PoseidonHasher {
 #[cfg(test)]
 mod tests {
     use super::{PoseidonHasher, POSEIDON_CAPACITY};
-    use crate::core::fields::m31::BaseField;
-    use crate::core::vcs::hasher::Hasher;
+    use crate::stwo_core::fields::m31::BaseField;
+    use crate::stwo_core::vcs::hasher::Hasher;
     use crate::hash_functions::poseidon::PoseidonHash;
     use crate::m31;
 

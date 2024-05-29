@@ -10,20 +10,20 @@ mod tests {
 
     use super::component::{Input, WideFibAir, WideFibComponent, LOG_N_COLUMNS};
     use super::constraint_eval::gen_trace;
-    use crate::core::air::accumulation::DomainEvaluationAccumulator;
-    use crate::core::air::{Component, ComponentProver, ComponentTrace};
-    use crate::core::backend::cpu::CpuCircleEvaluation;
-    use crate::core::backend::CpuBackend;
-    use crate::core::channel::{Blake2sChannel, Channel};
-    use crate::core::fields::m31::BaseField;
-    use crate::core::fields::qm31::QM31;
-    use crate::core::fields::IntoSlice;
-    use crate::core::poly::circle::CanonicCoset;
-    use crate::core::poly::BitReversedOrder;
-    use crate::core::prover::{prove, verify};
-    use crate::core::utils::shifted_secure_combination;
-    use crate::core::vcs::blake2_hash::Blake2sHasher;
-    use crate::core::vcs::hasher::Hasher;
+    use crate::stwo_core::air::accumulation::DomainEvaluationAccumulator;
+    use crate::stwo_core::air::{Component, ComponentProver, ComponentTrace};
+    use crate::stwo_core::backend::cpu::CpuCircleEvaluation;
+    use crate::stwo_core::backend::CpuBackend;
+    use crate::stwo_core::channel::{Blake2sChannel, Channel};
+    use crate::stwo_core::fields::m31::BaseField;
+    use crate::stwo_core::fields::qm31::QM31;
+    use crate::stwo_core::fields::IntoSlice;
+    use crate::stwo_core::poly::circle::CanonicCoset;
+    use crate::stwo_core::poly::BitReversedOrder;
+    use crate::stwo_core::prover::{prove, verify};
+    use crate::stwo_core::utils::shifted_secure_combination;
+    use crate::stwo_core::vcs::blake2_hash::Blake2sHasher;
+    use crate::stwo_core::vcs::hasher::Hasher;
     use crate::examples::wide_fibonacci::trace_gen::write_lookup_column;
     use crate::m31;
 

@@ -1,13 +1,13 @@
-use crate::core::air::accumulation::PointEvaluationAccumulator;
-use crate::core::air::mask::fixed_mask_points;
-use crate::core::air::{Air, Component};
-use crate::core::circle::CirclePoint;
-use crate::core::constraints::coset_vanishing;
-use crate::core::fields::m31::BaseField;
-use crate::core::fields::qm31::SecureField;
-use crate::core::fields::FieldExpOps;
-use crate::core::poly::circle::CanonicCoset;
-use crate::core::ColumnVec;
+use crate::stwo_core::air::accumulation::PointEvaluationAccumulator;
+use crate::stwo_core::air::mask::fixed_mask_points;
+use crate::stwo_core::air::{Air, Component};
+use crate::stwo_core::circle::CirclePoint;
+use crate::stwo_core::constraints::coset_vanishing;
+use crate::stwo_core::fields::m31::BaseField;
+use crate::stwo_core::fields::qm31::SecureField;
+use crate::stwo_core::fields::FieldExpOps;
+use crate::stwo_core::poly::circle::CanonicCoset;
+use crate::stwo_core::ColumnVec;
 
 pub const LOG_N_COLUMNS: usize = 8;
 pub const N_COLUMNS: usize = 1 << LOG_N_COLUMNS;

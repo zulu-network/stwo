@@ -4,15 +4,15 @@ use num_traits::One;
 
 use self::air::{FibonacciAir, MultiFibonacciAir};
 use self::component::FibonacciComponent;
-use crate::core::backend::cpu::CpuCircleEvaluation;
-use crate::core::channel::{Blake2sChannel, Channel};
-use crate::core::fields::m31::BaseField;
-use crate::core::fields::{FieldExpOps, IntoSlice};
-use crate::core::poly::circle::{CanonicCoset, CircleEvaluation};
-use crate::core::poly::BitReversedOrder;
-use crate::core::prover::{prove, verify, ProvingError, StarkProof, VerificationError};
-use crate::core::vcs::blake2_hash::Blake2sHasher;
-use crate::core::vcs::hasher::Hasher;
+use crate::stwo_core::backend::cpu::CpuCircleEvaluation;
+use crate::stwo_core::channel::{Blake2sChannel, Channel};
+use crate::stwo_core::fields::m31::BaseField;
+use crate::stwo_core::fields::{FieldExpOps, IntoSlice};
+use crate::stwo_core::poly::circle::{CanonicCoset, CircleEvaluation};
+use crate::stwo_core::poly::BitReversedOrder;
+use crate::stwo_core::prover::{prove, verify, ProvingError, StarkProof, VerificationError};
+use crate::stwo_core::vcs::blake2_hash::Blake2sHasher;
+use crate::stwo_core::vcs::hasher::Hasher;
 
 pub mod air;
 mod component;
@@ -118,15 +118,15 @@ mod tests {
     use rand::{Rng, SeedableRng};
 
     use super::{Fibonacci, MultiFibonacci};
-    use crate::core::air::accumulation::PointEvaluationAccumulator;
-    use crate::core::air::{AirExt, AirProverExt, Component, ComponentTrace};
-    use crate::core::circle::CirclePoint;
-    use crate::core::fields::m31::BaseField;
-    use crate::core::fields::qm31::SecureField;
-    use crate::core::poly::circle::CanonicCoset;
-    use crate::core::prover::VerificationError;
-    use crate::core::queries::Queries;
-    use crate::core::utils::bit_reverse;
+    use crate::stwo_core::air::accumulation::PointEvaluationAccumulator;
+    use crate::stwo_core::air::{AirExt, AirProverExt, Component, ComponentTrace};
+    use crate::stwo_core::circle::CirclePoint;
+    use crate::stwo_core::fields::m31::BaseField;
+    use crate::stwo_core::fields::qm31::SecureField;
+    use crate::stwo_core::poly::circle::CanonicCoset;
+    use crate::stwo_core::prover::VerificationError;
+    use crate::stwo_core::queries::Queries;
+    use crate::stwo_core::utils::bit_reverse;
     use crate::{m31, qm31};
 
     pub fn generate_test_queries(n_queries: usize, trace_length: usize) -> Vec<usize> {

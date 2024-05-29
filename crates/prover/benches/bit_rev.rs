@@ -2,10 +2,10 @@
 
 use criterion::{criterion_group, criterion_main, BatchSize, Criterion};
 use itertools::Itertools;
-use stwo_prover::core::fields::m31::BaseField;
+use stwo_prover::stwo_core::fields::m31::BaseField;
 
 pub fn cpu_bit_rev(c: &mut Criterion) {
-    use stwo_prover::core::utils::bit_reverse;
+    use stwo_prover::stwo_core::utils::bit_reverse;
     // TODO(andrew): Consider using same size for all.
     const SIZE: usize = 1 << 24;
     let data = (0..SIZE).map(BaseField::from).collect_vec();
@@ -19,8 +19,8 @@ pub fn cpu_bit_rev(c: &mut Criterion) {
 }
 
 pub fn simd_bit_rev(c: &mut Criterion) {
-    use stwo_prover::core::backend::simd::bit_reverse::bit_reverse_m31;
-    use stwo_prover::core::backend::simd::column::BaseFieldVec;
+    use stwo_prover::stwo_core::backend::simd::bit_reverse::bit_reverse_m31;
+    use stwo_prover::stwo_core::backend::simd::column::BaseFieldVec;
     const SIZE: usize = 1 << 26;
     let data = (0..SIZE).map(BaseField::from).collect::<BaseFieldVec>();
     c.bench_function("simd bit_rev 26bit", |b| {

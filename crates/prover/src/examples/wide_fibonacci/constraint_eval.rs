@@ -3,16 +3,16 @@ use num_traits::Zero;
 
 use super::component::{Input, WideFibAir, WideFibComponent};
 use super::trace_gen::write_trace_row;
-use crate::core::air::accumulation::DomainEvaluationAccumulator;
-use crate::core::air::{AirProver, Component, ComponentProver, ComponentTrace};
-use crate::core::backend::{Column, CpuBackend};
-use crate::core::constraints::coset_vanishing;
-use crate::core::fields::m31::BaseField;
-use crate::core::fields::qm31::SecureField;
-use crate::core::fields::FieldExpOps;
-use crate::core::poly::circle::CanonicCoset;
-use crate::core::utils::bit_reverse;
-use crate::core::ColumnVec;
+use crate::stwo_core::air::accumulation::DomainEvaluationAccumulator;
+use crate::stwo_core::air::{AirProver, Component, ComponentProver, ComponentTrace};
+use crate::stwo_core::backend::{Column, CpuBackend};
+use crate::stwo_core::constraints::coset_vanishing;
+use crate::stwo_core::fields::m31::BaseField;
+use crate::stwo_core::fields::qm31::SecureField;
+use crate::stwo_core::fields::FieldExpOps;
+use crate::stwo_core::poly::circle::CanonicCoset;
+use crate::stwo_core::utils::bit_reverse;
+use crate::stwo_core::ColumnVec;
 use crate::examples::wide_fibonacci::component::LOG_N_COLUMNS;
 
 // TODO(AlonH): Rename file to `cpu.rs`.

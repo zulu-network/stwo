@@ -12,7 +12,7 @@
     assert_matches,
     portable_simd
 )]
-pub mod core;
+pub mod stwo_core;
 pub mod examples;
 pub mod hash_functions;
 pub mod math;

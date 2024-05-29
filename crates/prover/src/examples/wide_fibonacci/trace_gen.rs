@@ -1,9 +1,9 @@
 use num_traits::One;
 
 use super::component::Input;
-use crate::core::fields::m31::BaseField;
-use crate::core::fields::FieldExpOps;
-use crate::core::utils::shifted_secure_combination;
+use crate::stwo_core::fields::m31::BaseField;
+use crate::stwo_core::fields::FieldExpOps;
+use crate::stwo_core::utils::shifted_secure_combination;
 
 /// Given a private input, write the trace row for the wide Fibonacci example to dst. Returns the
 /// last two elements of the row in case the sequence is continued.

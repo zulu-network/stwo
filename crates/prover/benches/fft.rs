@@ -5,15 +5,15 @@ use std::mem::{size_of_val, transmute};
 
 use criterion::{criterion_group, criterion_main, BatchSize, BenchmarkId, Criterion, Throughput};
 use itertools::Itertools;
-use stwo_prover::core::backend::simd::column::BaseFieldVec;
-use stwo_prover::core::backend::simd::fft::ifft::{
+use stwo_prover::stwo_core::backend::simd::column::BaseFieldVec;
+use stwo_prover::stwo_core::backend::simd::fft::ifft::{
     get_itwiddle_dbls, ifft, ifft3_loop, ifft_vecwise_loop,
 };
-use stwo_prover::core::backend::simd::fft::rfft::{fft, get_twiddle_dbls};
-use stwo_prover::core::backend::simd::fft::transpose_vecs;
-use stwo_prover::core::backend::simd::m31::PackedBaseField;
-use stwo_prover::core::fields::m31::BaseField;
-use stwo_prover::core::poly::circle::CanonicCoset;
+use stwo_prover::stwo_core::backend::simd::fft::rfft::{fft, get_twiddle_dbls};
+use stwo_prover::stwo_core::backend::simd::fft::transpose_vecs;
+use stwo_prover::stwo_core::backend::simd::m31::PackedBaseField;
+use stwo_prover::stwo_core::fields::m31::BaseField;
+use stwo_prover::stwo_core::poly::circle::CanonicCoset;
 
 pub fn simd_ifft(c: &mut Criterion) {
     let mut group = c.benchmark_group("iffts");
